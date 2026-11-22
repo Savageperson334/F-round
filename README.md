@@ -8,11 +8,14 @@ This is neither a startup pitch nor a narrowly focused synth project. The goal i
 
 ## Enter the chaos
 
-- **[ATLAS.md](ATLAS.md)** — initial enormous list of 120 *distinct* GitHub repositories, arranged into 11 overlapping shelves (136 cross-references).
-- **[BACK_ALLEYS.md](BACK_ALLEYS.md)** — 94 additional unreviewed GitHub search leads. Together the two catalogs cover **214 distinct repositories**.
+- **[CATALOG.md](CATALOG.md)** — data dictionary and limitations for **[4,169-repo master CSV](data/F_ROUND_MASTER_4100.csv)**, deduplicated across 63 domain shelves.
+- **[ATLAS.md](ATLAS.md)** — 120 higher-confidence, manually described GitHub projects arranged into 11 overlapping shelves.
+- **[BACK_ALLEYS.md](BACK_ALLEYS.md)** — 94 earlier leads folded into the mega-catalog where possible.
 - **[COLLISIONS.md](COLLISIONS.md)** — 15 cross-repository proposals. Each identifies a reason to exist, a tiny first proof, an absurd extension, and real complications.
 - **[FIELD_GUIDE.md](FIELD_GUIDE.md)** — scouting workflow, provenance, adapters, licensing, safety and reproducible prototypes.
-- **[index.html](index.html)** — dependency-free browser collision engine: roll three different project disciplines, lock a part, inspect 120 links, and export an experiment brief. Open it directly as a local HTML file or host with GitHub Pages.
+- **[index.html](index.html)** — offline browser collision engine with all **4,169 repositories**, pin-and-reroll, 63 disciplines, paginated search and Markdown export.
+
+- **[FUTURES.md](FUTURES.md)** — deliberately incompatible future directions, including an absurd game, an explorable museum, a technical adapter engine, and a data-driven printing machine.
 
 ## Operating principles
 
@@ -26,7 +29,7 @@ This is neither a startup pitch nor a narrowly focused synth project. The goal i
 
 ## First scouting expedition
 
-**2026-11-22.** The linked repos were inspected for project existence and repository-level metadata; this is not a source-code audit of 120 codebases. Some projects are abandoned, archived, unlicensed, hardware-dependent or prototypes. That's okay: we explicitly keep *ideas* separate from *drop-in dependencies*.
+**2026-11-22.** The giant sweep discovered **4,010 unique GitHub search results**, then deduplicated them with the earlier hand-scouted atlas and back alleys for **4,169 distinct repositories**. Search-indexed projects are genuine listings but have **not** all been individually inspected; licenses are not assumed. Some projects are abandoned, archived, unlicensed, hardware-dependent or prototypes. That's fine for *ideas*, not for automatically reusable code.
 
 The initial objective is to discover genuine collisions, not polish a brand or ship a giant framework.
 
