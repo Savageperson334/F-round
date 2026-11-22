@@ -23,7 +23,7 @@ GitHub is not just a warehouse of web frameworks. Somewhere there is a person wh
 
 That is the material of F-round.
 
-The first research expedition collected **4,169 distinct GitHub repository leads across 63 research shelves** (snapshot: November 22, 2026). These are real repository links, **not 4,169 validated or legally reusable software components**. We have more detailed GitHub metadata for an initial 120 scouted projects; most entries are still uninvestigated leads.
+The first research expedition collected **4,169 distinct GitHub repository leads across 63 research shelves** (snapshot: November 22, 2026). These are real repository links, **not 4,169 validated or legally reusable software components**. Every row now carries GitHub's own metadata (description, topics, language, licence ID, stars, dates), but only an initial 120 scouted projects have been looked at by anyone; most entries are still uninvestigated leads.
 
 Start with the **[4,169-repository master CSV](data/F_ROUND_MASTER_4100.csv)**, its [catalogue explanation](CATALOG.md), or the [offline collision browser](index.html). The browser can randomly combine entries, lock interesting discoveries, search categories, and export speculative experiment briefs.
 
@@ -317,7 +317,7 @@ The current repository is **a research foundation and a small working browser ex
 
 | Resource | Purpose |
 | --- | --- |
-| **[Master CSV — 4,169 projects](data/F_ROUND_MASTER_4100.csv)** | Deduplicated repository leads with research categories, possible collisions, license signals, and editable notes |
+| **[Master CSV — 4,169 projects](data/F_ROUND_MASTER_4100.csv)** | Deduplicated repository leads with GitHub descriptions, topics, languages, licence IDs, activity, research categories, possible collisions, and editable notes |
 | **[Catalogue guide](CATALOG.md)** | Data fields, research confidence, and verification limits |
 | **[120 scouted projects](ATLAS.md)** | Human-readable overviews across many disciplines |
 | **[Additional back alleys](BACK_ALLEYS.md)** | Looser leads from the earlier search |
