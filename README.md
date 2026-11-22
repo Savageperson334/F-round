@@ -9,6 +9,8 @@ This is neither a startup pitch nor a narrowly focused synth project. The goal i
 ## Enter the chaos
 
 - **[CATALOG.md](CATALOG.md)** — data dictionary and limitations for **[4,169-repo master CSV](data/F_ROUND_MASTER_4100.csv)**, deduplicated across 63 domain shelves.
+- **[SCOUTED_METADATA_120.csv](data/SCOUTED_METADATA_120.csv)** — project descriptions, license signals, stars, last push, language and archive status for the 120 deeper-scouted entries.
+- **[SEARCH_QUERIES.csv](data/SEARCH_QUERIES.csv)** — all 42 original discovery searches and their deliberately speculative connections.
 - **[ATLAS.md](ATLAS.md)** — 120 higher-confidence, manually described GitHub projects arranged into 11 overlapping shelves.
 - **[BACK_ALLEYS.md](BACK_ALLEYS.md)** — 94 earlier leads folded into the mega-catalog where possible.
 - **[COLLISIONS.md](COLLISIONS.md)** — 15 cross-repository proposals. Each identifies a reason to exist, a tiny first proof, an absurd extension, and real complications.
