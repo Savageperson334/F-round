@@ -9,6 +9,7 @@ This is neither a startup pitch nor a narrowly focused synth project. The goal i
 ## Enter the chaos
 
 - **[ATLAS.md](ATLAS.md)** — initial enormous list of 120 *distinct* GitHub repositories, arranged into 11 overlapping shelves (136 cross-references).
+- **[BACK_ALLEYS.md](BACK_ALLEYS.md)** — 94 additional unreviewed GitHub search leads. Together the two catalogs cover **214 distinct repositories**.
 - **[COLLISIONS.md](COLLISIONS.md)** — 15 cross-repository proposals. Each identifies a reason to exist, a tiny first proof, an absurd extension, and real complications.
 - **[FIELD_GUIDE.md](FIELD_GUIDE.md)** — scouting workflow, provenance, adapters, licensing, safety and reproducible prototypes.
 - **[index.html](index.html)** — dependency-free browser collision engine: roll three different project disciplines, lock a part, inspect 120 links, and export an experiment brief. Open it directly as a local HTML file or host with GitHub Pages.
