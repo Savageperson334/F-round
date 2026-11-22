@@ -7,6 +7,8 @@
 - [Batch 2](data/discovery_batch_02.csv): 1,399 additional unique hits from 14 unrelated searches, 18 columns.
 - [Batch 3](data/discovery_batch_03.csv): 1,013 additional unique hits from 12 more searches, 18 columns.
 - [ATLAS.md](ATLAS.md): 120 projects whose high-level description was inspected at a human-readable level.
+- [GitHub metadata for 120 scouted projects](data/SCOUTED_METADATA_120.csv): real repo descriptions, GitHub-reported license IDs, stars, primary language, archive flag, size and last push; fetched November 22, 2026.
+- [Original search query manifest](data/SEARCH_QUERIES.csv): all 42 GitHub discovery queries and their speculative research prompts.
 - [BACK_ALLEYS.md](BACK_ALLEYS.md): 94 extra early leads, of which 72 were not already present in the 4,010-search-hit collection or the 120 scouted projects.
 
 The **single master** deduplicates by case-insensitive `owner/repository`, yielding **4,169 = 4,010 GitHub search hits + 87 additional atlas projects + 72 extra leads**. The 120 scouted projects overlap the search sweep, so evidence tiers in the master are: **120 SCOUTED, 3,977 SEARCH, 72 LEAD**.
@@ -23,7 +25,7 @@ The collection covers **63 named topic shelves**. This is broad discovery, not p
 | What it might do / stated purpose | **SCOUTED:** short summary from inspected repo overview. **SEARCH:** merely a hypothesis associated with the search theme, **not a verified project-specific description**. **LEAD:** blank |
 | Collide with (idea) | An imaginative *other* field; **not an existing integration** |
 | Potential artifact (idea) | Pure brainstorming; not a project deliverable promised by the repository |
-| License (verify) | `UNVERIFIED` unless source-license metadata has actually been retrieved and checked. GitHub's public visibility alone doesn't grant reuse rights |
+| License (verify) | GitHub-reported license ID for the 120 SCOUTED repos; otherwise `UNVERIFIED`. `NO_LICENSE_DETECTED` and `NOASSERTION` are not reuse grants. GitHub's public visibility alone doesn't grant reuse rights |
 | Archived? | Value from repo metadata when present; `Unknown` for some older leads |
 | Repository size KB | GitHub-reported repository size from search metadata, not build size or code quality |
 | Evidence tier | `SCOUTED` / `SEARCH` / `LEAD` as defined below |
@@ -33,7 +35,7 @@ The original batches contain additional `Search Query`, `Default branch`, and `G
 
 ## Evidence tiers
 
-- **SCOUTED (120):** Repository exists and the stated project overview or GitHub repo information was inspected. Not audited, run or integrated.
+- **SCOUTED (120):** Repository exists; its stated purpose was inspected, and GitHub license, stars, push date and other metadata were retrieved separately. This does **not** constitute a source-code audit, a run, or an integration.
 - **SEARCH (3,977):** Repository was returned by GitHub repository search. Its URL and search category are grounded, but purpose, license, quality and actual usability are not yet verified.
 - **LEAD (72):** Previously collected secondary names with GitHub links, not promoted through this research pass.
 
@@ -56,3 +58,7 @@ Use the [interactive offline collision browser](index.html) to pick entries, pin
 - Historical and scientific datasets may contain errors; preserve citations, uncertainty and the distinction between data and speculative artwork.
 
 This file describes a deliberately enormous *candidate catalog*, not a tested dependency list.
+
+## License metadata in the scouted subset
+
+For the **120** scouted entries, the GitHub repository metadata reports: **MIT 39, GPL-3.0 17, Apache-2.0 5, BSD-3-Clause 4, AGPL-3.0 3, MPL-2.0 1, BSD-2-Clause 1, GPL-2.0 1, NO_LICENSE_DETECTED 37, NOASSERTION 12**. This is a *snapshot of GitHub metadata*, not a legal opinion or a complete per-file/model/asset license audit. The other **4,049** are intentionally marked `UNVERIFIED`.
