@@ -11,6 +11,7 @@ This is neither a startup pitch nor a narrowly focused synth project. The goal i
 - **[ATLAS.md](ATLAS.md)** — initial enormous list of 120 *distinct* GitHub repositories, arranged into 11 overlapping shelves (136 cross-references).
 - **[COLLISIONS.md](COLLISIONS.md)** — 15 cross-repository proposals. Each identifies a reason to exist, a tiny first proof, an absurd extension, and real complications.
 - **[FIELD_GUIDE.md](FIELD_GUIDE.md)** — scouting workflow, provenance, adapters, licensing, safety and reproducible prototypes.
+- **[index.html](index.html)** — dependency-free browser collision engine: roll three different project disciplines, lock a part, inspect 120 links, and export an experiment brief. Open it directly as a local HTML file or host with GitHub Pages.
 
 ## Operating principles
 
