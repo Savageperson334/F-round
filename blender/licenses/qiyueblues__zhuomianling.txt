@@ -1,0 +1,121 @@
+===== qiyueblues/zhuomianling : LICENSE =====
+
+MIT License
+
+Copyright (c) 2026 Zhuomianling contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+===== qiyueblues/zhuomianling : NOTICE =====
+
+第三方声明
+==========
+
+Live2D Runtime 与 Cubism SDK 文件
+---------------------------------
+
+本仓库包含用于在 Electron renderer 中加载和驱动 Live2D 模型的 runtime 与
+SDK 相关文件，包括但不限于：
+
+- `public/vendor/live2dcubismcore.min.js`
+- `public/vendor/live2d-v2/`
+- `public/vendor/cubism/Shaders/`
+- `src/renderer/live2d/cubism/`
+
+这些文件由 Live2D Inc. 通过官方 Live2D 分发渠道提供，或基于官方 Cubism SDK
+目录布局整理，不属于本项目原创源码。
+
+使用、复制、再分发或发布包含 Live2D Cubism Core 的软件时，应遵守 Live2D
+官方许可条款。在发布版本、再分发本仓库或用于商业用途前，请阅读并遵守当前
+官方协议和发布许可条款：
+
+- Live2D Cubism SDK:
+  https://www.live2d.com/en/sdk/about/
+- Download Live2D Cubism SDK for Web:
+  https://www.live2d.com/en/sdk/download/web/
+- Live2D License Agreement:
+  https://www.live2d.com/en/terms/
+
+如果不希望随本仓库再分发 Live2D runtime / Cubism SDK 文件，请移除上述文件，
+并要求用户从 Live2D 官方网站下载所需 runtime，再放回应用要求的相同路径，
+包括：
+
+```text
+public/vendor/live2dcubismcore.min.js
+```
+
+本声明仅用于提供信息，不构成法律意见；最终以 Live2D 官方许可条款为准。
+
+
+本地记忆运行时
+--------------
+
+正式 Windows 发布包可以包含应用自有的 CPython 3.13 embeddable runtime、
+memu-py 1.5.1、ONNX Runtime 1.27.0、Tokenizers 0.23.1、NumPy 2.5.1、
+FlatBuffers 25.12.19 及其锁定的传递依赖。完整的软件包清单、包元数据、
+许可证文件和补充声明位于：
+
+    resources/memory-sidecar/third-party-licenses/
+
+发布包中的 BGE INT8 ONNX 模型由本项目从固定的官方
+BAAI/bge-small-zh-v1.5 revision
+7999e1d3359715c523056ef9478215996d62a620 自行生成，其模型卡声明采用 MIT
+许可证。仅用于开发验证的第三方转换文件不会被再分发。安装包内的模型清单会
+保留官方源文件哈希、转换工具链版本和最终 ONNX 哈希。
+
+仓库不会提交生成后的 runtime 或模型二进制。发布准备流程会在被忽略的缓存
+目录中生成它们，打包审计会按生成的 SHA-256 白名单逐文件验证。
+
+
+桌宠包归档依赖
+--------------
+
+`.zmling` 桌宠包和 `.zmlmem` 记忆备份的流式 ZIP 写入与逐 entry 读取分别使用：
+
+- yazl 3.3.1 — MIT License — https://github.com/thejoshwolfe/yazl
+- yauzl 3.4.0 — MIT License — https://github.com/thejoshwolfe/yauzl
+
+这些依赖只提供通用归档能力，不包含任何用户桌宠、模型、声音或配置数据。
+
+
+应用更新依赖
+------------
+
+Windows 安装版使用 electron-updater 6.8.11（MIT License）从公开阿里云 OSS
+读取版本和更新说明，下载并校验更新包，以及在用户确认后启动 NSIS 安装程序；
+用户也可主动选择从本项目 GitHub Release 下载同一版本：
+https://github.com/electron-userland/electron-builder
+
+运行依赖包括 builder-util-runtime、fs-extra、graceful-fs、js-yaml、jsonfile、
+lazy-val、lodash.escaperegexp、lodash.isequal、semver、tiny-typed-emitter、debug、
+ms、sax、universalify（MIT / ISC / BlueOak-1.0.0）及 argparse（Python-2.0）；具体版本由
+package-lock.json 锁定，各依赖的原始许可证随应用保留。更新链路不需要
+GitHub Token 或 OSS 密钥，不上传桌宠、聊天、模型、音频、记忆或 API Key。
+
+发布机的 OSS 上传工具使用 ali-oss 6.23.0（MIT License）：
+https://github.com/ali-sdk/ali-oss
+该工具仅为开发依赖，从发布机环境变量读取凭据，不随桌面客户端分发。
+
+更新安装窗口的蓝条绘图辅助程序由本项目源码编译，只嵌入 NSIS 安装器的
+临时插件目录，使用 Windows 已有的 .NET Framework Windows Forms / GDI+。
+不捆绑 .NET 运行时，不安装额外服务，不进入 app.asar 或用户数据；系统不具备
+所需运行时或绘图辅助程序不可用时使用原生静态进度条。
+
+

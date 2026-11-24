@@ -1,0 +1,33 @@
+# globe_distance
+#
+# Copied verbatim from https://github.com/waidyanatha/openeew-seismology
+#   file utils/plot_event.py, line 27
+#   licence (as GitHub reports it): Apache-2.0   see ../licenses/
+#   catalogue shelf: Earthquakes and seismic tools
+#
+# Everything below the line is that repository's code, unmodified. Imports, constants and
+# helper functions it needs from the same file are included, also unmodified.
+# ----------------------------------------------------------------------------
+
+import math
+
+
+def globe_distance(lat1, lon1, lat2, lon2):
+
+    # approximate radius of earth in km
+    R = 6373.0
+
+    lat1 = math.radians(lat1)
+    lon1 = math.radians(lon1)
+    lat2 = math.radians(lat2)
+    lon2 = math.radians(lon2)
+
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    a = math.sin(dlat / 2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    distance = R * c
+
+    return distance

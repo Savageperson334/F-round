@@ -1,0 +1,19 @@
+# make_divisible
+#
+# Copied verbatim from https://github.com/farjon/insect_detection
+#   file pytorch_image_models/timm/models/layers/helpers.py, line 25
+#   licence (as GitHub reports it): MIT   see ../licenses/
+#   catalogue shelf: Moths insects and insect traps
+#
+# Everything below the line is that repository's code, unmodified. Imports, constants and
+# helper functions it needs from the same file are included, also unmodified.
+# ----------------------------------------------------------------------------
+
+
+def make_divisible(v, divisor=8, min_value=None, round_limit=.9):
+    min_value = min_value or divisor
+    new_v = max(min_value, int(v + divisor / 2) // divisor * divisor)
+    # Make sure that round down does not go down by more than 10%.
+    if new_v < round_limit * v:
+        new_v += divisor
+    return new_v

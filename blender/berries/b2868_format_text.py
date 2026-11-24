@@ -1,0 +1,71 @@
+# format_text
+#
+# Copied verbatim from https://github.com/nthmost/artery-thermal
+#   file experience_generator/utils.py, line 20
+#   licence (as GitHub reports it): MIT   see ../licenses/
+#   catalogue shelf: Physical art output, plotters, paper and textile machines
+#
+# Everything below the line is that repository's code, unmodified. Imports, constants and
+# helper functions it needs from the same file are included, also unmodified.
+# ----------------------------------------------------------------------------
+
+import re
+
+
+def capitalize_sentences(text):
+    # Split the text into sentences based on common sentence-ending punctuation
+    sentences = re.split('(?<=[.!?]) +', text)
+
+    # Capitalize the first letter of each sentence
+    capitalized_sentences = [sentence.capitalize() for sentence in sentences]
+
+    # Join the sentences back into a single string
+    return ' '.join(capitalized_sentences)
+
+
+def contraction_replacer(match):
+    word = match.group(1)
+    contraction = match.group(2).replace(" ", "")
+    return f"{word}{contraction}"
+
+
+def format_text(text):
+    # Standardize straight apostrophes to curly ones
+    text = text.replace("'", "’")
+
+    # Define a list of patterns and their replacements
+    replacements = [
+        (r" \,", ","),  # spaces before commas
+        (r" \.", "."),  # spaces before periods
+        (r" \?", "?"),  # spaces before question marks
+        (r" \!", "!"),  # spaces before exclamation marks
+        (r" ’", "’"),   # spaces before apostrophes
+        (r" ;", ";"),   # spaces before semicolons
+        (r" \:", ":"),  # spaces before colons
+    ]
+
+    # Apply the replacements
+    for pattern, replacement in replacements:
+        text = re.sub(pattern, replacement, text)
+
+    # Fix dashes surrounded by spaces
+    text = re.sub(r' - ', '-', text)
+
+    # Handle contractions
+    contraction_patterns = [
+        r"\b(\w+) (’[a-z]{1,2})\b",  # for contractions like "you ’re"
+        r"\b(\w+ n) ’t\b",  # for contractions like "do n’t"
+        r"\b(\w+) (n’t)\b"  # for contractions like "do n’t" with a different pattern
+    ]
+    for pattern in contraction_patterns:
+        text = re.sub(pattern, contraction_replacer, text)
+
+    text = capitalize_sentences(text)
+
+    # Capitalize standalone 'i'
+    text = re.sub(r'\b i(?=[.!?])', ' I', text)
+
+    # Ensure "AI" is always capitalized
+    text = re.sub(r'\bai\b', 'AI', text, flags=re.IGNORECASE)
+
+    return text

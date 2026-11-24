@@ -1,0 +1,16 @@
+// easeInOutCubic
+//
+// Copied verbatim from https://github.com/cikelino/ferrofluid
+//   file src/app/utils.js, line 16
+//   licence (as GitHub reports it): MIT   see ../licenses/
+//   catalogue shelf: Ferrofluids and magnetic materials
+//   the same function also appears in: robert-leitl/ferrofluid
+//
+// Everything below the line is that repository's code, unmodified. Imports, constants and
+// helper functions it needs from the same file are included, also unmodified.
+// ----------------------------------------------------------------------------
+
+
+const easeInOutCubic = (x) => {
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+}

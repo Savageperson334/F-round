@@ -1,0 +1,27 @@
+// readS32
+//
+// Copied verbatim from https://github.com/synetica/enlink-decoder
+//   file datacake/enLink - DataCake compact codec.js, line 178
+//   licence (as GitHub reports it): MIT   see ../licenses/
+//   catalogue shelf: Sensors and telemetry
+//
+// Everything below the line is that repository's code, unmodified. Imports, constants and
+// helper functions it needs from the same file are included, also unmodified.
+// ----------------------------------------------------------------------------
+
+
+function S32(ival) {
+    if (isNaN(ival) === false) {
+        if (ival > 2147483647)
+            ival = ival - 4294967296;
+    }
+    return ival;
+}
+
+
+function s32_1(bytes, index) {
+    return S32((bytes[index + 1] << 24) | (bytes[index + 2] << 16) | (bytes[index + 3] << 8) | (bytes[index + 4]));
+}
+
+
+function readS32(data, i) { return s32_1(data, i); }

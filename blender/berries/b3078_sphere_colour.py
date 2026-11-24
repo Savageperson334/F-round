@@ -1,0 +1,23 @@
+# sphere_colour
+#
+# Copied verbatim from https://github.com/piersfinlayson/rom-bus-control-protocol
+#   file reference/host/68k/amiga-boot/tools/mkball.py, line 112
+#   licence (as GitHub reports it): MIT   see ../licenses/
+#   catalogue shelf: Retro computing
+#
+# Everything below the line is that repository's code, unmodified. Imports, constants and
+# helper functions it needs from the same file are included, also unmodified.
+# ----------------------------------------------------------------------------
+
+PENS = 8
+
+BANDS_PER_CHECK = PENS // 2
+
+
+def sphere_colour(band, colours):
+    """The colour of a band of longitude on the ball itself, as a $0RGB word.
+
+    Only the band number within one repeat of the pattern matters, which is
+    why eight registers can hold the lot.
+    """
+    return colours[(band % PENS) // BANDS_PER_CHECK]

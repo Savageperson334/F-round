@@ -326,6 +326,7 @@ The current repository is **a research foundation and a small working browser ex
 | **[Collision proposals](COLLISIONS.md)** | Fifteen improbable combinations with small proof-of-concept suggestions |
 | **[Field guide](FIELD_GUIDE.md)** | Research, experiments, attribution, licensing, and reproducibility |
 | **[Possible futures](FUTURES.md)** | Additional creative and practical directions |
+| **[The blender](blender/README.md)** | Real code, not descriptions of it: 2,828 functions copied verbatim from 409 of these repositories (Python, numpy, notebooks, JavaScript), fused into one program that passes a seed from one stranger's function to the next. `python blender/smoothie.py "moth"` |
 | **[Collision Engine](index.html)** | A dependency-free HTML browser to search, lock, reroll, and export source-project combinations |
 
 The catalogue is not exhaustively verified; it contains experimental leads, old projects, obscure repos, and unlicensed material. That is intentional for **discovery**, not a statement that every item can be imported or redistributed.
